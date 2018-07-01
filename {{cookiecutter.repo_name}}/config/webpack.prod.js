@@ -1,42 +1,13 @@
-import path from 'path';
-import webpack from 'webpack';
+const merge = require('webpack-merge');
+const webpack = require('webpack');
 
-import baseConfig from './webpack.common.js';
+const common = require('./webpack.common.js');
 
-
-module.exports = (opts) => {
-
-  const
-    {CDN_PATH, PROJECT_ROOT} = opts,
-    config = baseConfig(opts);
-
-  return {
-    ...config,
-    output: {
-      ...config.output,
-      path: path.resolve(PROJECT_ROOT, '{{ cookiecutter.production_output_path }}'),
-      // set CDN_PATH to your cdn static file directory
-      publicPath: CDN_PATH || '/',
-    },
+module.exports = merge(common, {
     plugins: [
-      ...config.plugins,
-      // pass options to uglify
-      new webpack.LoaderOptionsPlugin({
-        minimize: true,
-        debug: false,
-      }),
-      // minifies your code
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false,
-        },
-        output: {
-          comments: false,
-        },
-        sourceMap: false,
-      }),
-      // removes duplicate modules
-      new webpack.optimize.DedupePlugin(),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production'),
+        }),
+        new webpack.optimize.UglifyJsPlugin(),
     ],
-  };
-};
+});

@@ -1,17 +1,13 @@
-import webpack from 'webpack';
+const merge = require('webpack-merge');
+const webpack = require('webpack');
 
-import baseConfig from './webpack.common.js';
+const common = require('./webpack.common.js');
 
-
-module.exports = (opts) => {
-
-  const config = baseConfig(opts);
-
-  return {
-    ...config,
+module.exports = merge(common, {
+    devtool: 'eval-source-map',
     plugins: [
-      ...config.plugins,
-      new webpack.NoErrorsPlugin(),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('development'),
+        })
     ],
-  };
-};
+});
