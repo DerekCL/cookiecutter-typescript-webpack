@@ -1,26 +1,26 @@
-import path from 'path';
+const path = require('path');
 
-module.exports = (opts) => {
+// TODO: When we move to newer Node, use "tsconfig-paths-webpack-plugin" and
+// erase `resolve.alias`.
 
-  return {
-    entry: path.resolve(__dirname, 'src/index.tsx'),
-    output: {
-      filename: 'dist/program-web.js',
-    },
-    module: {
-      rules: [
-        {
-          test: /\.(j|t)sx?$/,
-          exclude: /node_modules/,
-          loader: 'awesome-typescript-loader',
-        },
-      ],
-    },
-    resolve: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      alias: {
-          "@src": path.resolve(__dirname, "src"),
+module.exports = {
+  entry: path.resolve(__dirname, 'src/index.tsx'),
+  output: {
+    filename: 'dist/program-web.js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(j|t)sx?$/,
+        exclude: /node_modules/,
+        loader: 'awesome-typescript-loader',
       },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    alias: {
+        "@src": path.resolve(__dirname, "src"),
     },
-  };
+  },
 };

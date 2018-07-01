@@ -19,12 +19,10 @@ const OPTIONS = {
 module.exports = (() => {
   switch (process.env.NODE_ENV) {
     case 'production':
-      return require('./config/webpack.prod.js');
+      return require('./config/webpack.prod');
     case 'local':
-      return require('./config/webpack.dev.js');
-    case 'test':
-      return require('./config/webpack.test.js');
+      return require('./config/webpack.dev');
     default:
-      return require('./config/webpack.dev.js');
+      return require('./config/webpack.dev');
   }
 })()(OPTIONS);
