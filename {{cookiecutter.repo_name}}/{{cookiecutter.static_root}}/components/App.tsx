@@ -1,4 +1,6 @@
-import React, { PropTypes, Component } from "react";
+import * as React from "react";
+
+const { PropTypes, Component } = React;
 
 export default class App extends Component {
     static propTypes = {

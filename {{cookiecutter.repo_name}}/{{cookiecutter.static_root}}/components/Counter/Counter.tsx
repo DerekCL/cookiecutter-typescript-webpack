@@ -1,4 +1,6 @@
-import React, { PropTypes, Component } from "react";
+import React, from "react";
+
+const { PropTypes, Component } = React;
 
 export default class Counter extends Component {
     static propTypes = {

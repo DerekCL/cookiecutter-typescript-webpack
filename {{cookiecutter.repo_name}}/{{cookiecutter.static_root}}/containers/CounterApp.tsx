@@ -1,9 +1,11 @@
-import React, { Component, PropTypes } from "react";
+import * as React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import * as CounterActions from "../actions/counterActions";
 import Counter from "../components/Counter";
+
+const { Component, PropTypes } = React
 
 class CounterApp extends Component {
     static propTypes = {
