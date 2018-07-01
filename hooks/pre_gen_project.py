@@ -3,7 +3,6 @@ import shutil
 
 # Get the root project directory
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
-is_existing = '{{ cookiecutter.existing_project }}' == 'y'
 
 
 def add_tilda(project_directory, file_name):
@@ -18,8 +17,3 @@ def add_tilda(project_directory, file_name):
     )
     if os.path.isfile(current_location):
         shutil.move(current_location, new_location)
-
-
-if is_existing:
-    add_tilda(PROJECT_DIRECTORY, '.gitignore')
-    add_tilda(PROJECT_DIRECTORY, 'README.md')

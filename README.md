@@ -66,44 +66,7 @@ Options
 * `author_name`: Your Name
 * `description`: A short description of the project for the `README.md` file
 * `version`: Project version number
-* `existing_project`: `n` if this is a new project and `y` if you're integrating into an existing project. See the notes below about integrating into an existing project.
 * `css_extension`: [`none`, `less`, `sass`] - use `less` or `sass` to preprocess styles.
-
-
-Integrating into existing projects
-----------------------------------
-
-You can chain this into an existing cookiecutter project by installing via the projects `./hooks/post_gen_project.py` file or just installing it via the command line.
-
-### Using post hooks
-Here is a django project post hook example that chains this through a django cookiecutter project.
-
-```python
-from cookiecutter.main import cookiecutter
-
-  cookiecutter(
-      'git@github.com:goldhand/cookiecutter-webpack.git',
-      replay=False, overwrite_if_exists=True, output_dir='../',
-      checkout=None, no_input=True, extra_context={
-          'project_name': '{{ cookiecutter.project_name }}',
-          'repo_name': '{{ cookiecutter.repo_name }}',
-          'repo_owner': 'goldhand',
-          'static_root': '{{ cookiecutter.project_dir }}/static/{{ cookiecutter.project_dir }}',
-          'production_output_path': '{{ cookiecutter.project_dir }}/static/{{ cookiecutter.project_dir }}/dist/',
-          'author_name': '{{ cookiecutter.author_name }}',
-          'description': '{{ cookiecutter.description }}',
-          'version': '{{ cookiecutter.version }}',
-          'existing_project': 'y',
-          'css_extension': 'sass',
-      })
-```
-
-The flag `existing_project` will move/remove some files and dependencies and also add supporting configurations for a django project.
-
-### Using command line
-Just make sure you use the `--overwrite-if-exists` [ or `-f`] flag so cookiecutter can work within your existing project structure. You will also probably want to point to your existing projects parent directory and make sure you use the same `repo_name` as the project directory so your `package.json` files are installed at the project root.
-
-	cookiecutter -f -output-dir ../ git@github.com:goldhand/cookiecutter-webpack.git
 
 
 Contributing
