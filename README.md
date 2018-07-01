@@ -66,7 +66,7 @@ Options
 * `author_name`: Your Name
 * `description`: A short description of the project for the `README.md` file
 * `version`: Project version number
-* `css_extension`: [`none`, `less`, `sass`] - use `less` or `sass` to preprocess styles.
+* `css_extension`: [`sass`, `less`, `none` ] - use `less` or `sass` to preprocess styles.
 
 
 Contributing
