@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Route, IndexRoute, Redirect } from "react-router";
+import { IndexRoute, Redirect, Route } from "react-router";
 
 import App from "./components/App";
 import CounterApp from "./containers/CounterApp";

@@ -1,5 +1,5 @@
-import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "reducers";
+import { applyMiddleware, compose, createStore } from "redux";
 import { persistState } from "redux-devtools";
 
 export default function configureStore(initialState) {
@@ -15,7 +15,7 @@ export default function configureStore(initialState) {
         ];
         middleware = applyMiddleware(...middlewares);
 
-        let getDebugSessionKey = function() {
+        const getDebugSessionKey = function() {
             // By default we try to read the key from ?debug_session=<key> in the address bar
             const matches = window.location.href.match(
                 /[?&]debug_session=([^&]+)\b/,

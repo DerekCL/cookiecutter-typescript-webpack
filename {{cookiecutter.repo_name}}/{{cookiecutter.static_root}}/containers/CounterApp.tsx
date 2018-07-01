@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 import * as CounterActions from "../actions/counterActions";
 import Counter from "../components/Counter";
 
-const { Component, PropTypes } = React
+const { Component, PropTypes } = React;
 
 class CounterApp extends Component {
     static propTypes = {

@@ -2,11 +2,11 @@ import * as React from "react";
 import { createDevTools } from "redux-devtools";
 
 // Monitors are separate packages, and you can make a custom one
-import LogMonitor from "redux-devtools-log-monitor";
-import DockMonitor from "redux-devtools-dock-monitor";
-import SliderMonitor from "redux-slider-monitor";
 import Dispatcher from "redux-devtools-dispatch";
+import DockMonitor from "redux-devtools-dock-monitor";
+import LogMonitor from "redux-devtools-log-monitor";
 import MultipleMonitors from "redux-devtools-multiple-monitors";
+import SliderMonitor from "redux-slider-monitor";
 
 const REDUX_DEV_TOOLS_VISIBLE = false;
 
