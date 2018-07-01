@@ -2,10 +2,9 @@ Cookiecutter-webpack
 ====================
 [![CircleCI](https://circleci.com/gh/goldhand/cookiecutter-webpack.svg?style=svg)](https://circleci.com/gh/goldhand/cookiecutter-webpack)
 
-Boilerplate for setting up [webpack 2][webpack2] configuration with [hot reloading][hmr], [babel][babel] for es6 modules, [react][react] + [redux][redux] for views and state, and [karma][karma] + [mocha][mocha] + [expect][expect] for testing.
+Boilerplate for setting up [webpack 2][webpack2] configuration with [babel][babel] for es6 modules, [react][react] + [redux][redux] for views and state, and [karma][karma] + [mocha][mocha] + [expect][expect] for testing.
 
 [webpack2]: https://github.com/webpack/webpack/tree/v2.1.0-beta.13
-[hmr]: https://github.com/gaearon/react-transform-hmr
 [babel]: https://babeljs.io/
 [react]: https://facebook.github.io/react/
 [redux]: http://redux.js.org/index.html
