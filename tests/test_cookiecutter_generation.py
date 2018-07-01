@@ -24,7 +24,6 @@ def context():
         "email": "Your email",
         "description": "A short description of the project.",
         "version": "0.1.0",
-        "existing_project": "n",
         "css_extension": "none",
     }
 

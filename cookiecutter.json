@@ -7,7 +7,6 @@
     "author_name": "Your Name",
     "description": "A short description of the project.",
     "version": "0.1.0",
-    "existing_project": "n",
     "css_extension": ["none", "less", "sass"],
     "open_source_license": "ISC"
 }
