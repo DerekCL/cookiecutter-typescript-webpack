@@ -1,18 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-{% if cookiecutter.use_ejs == 'y' -%}
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-
-
-const HTML_WEBPACK_OPTIONS = {
-  main: {
-    title: '{{ cookiecutter.project_name }}',
-    template: '{{ cookiecutter.static_root }}/templates/default.ejs',
-    inject: false,
-    appMountId: 'main',
-  },
-};
-{%- endif %}
 
 module.exports = (opts) => {
 
@@ -20,9 +7,6 @@ module.exports = (opts) => {
 
   let plugins = [
     // add all common plugins here
-    {% if cookiecutter.use_ejs == 'y' -%}
-    new HtmlWebpackPlugin(HTML_WEBPACK_OPTIONS.main),
-    {% endif -%}
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(NODE_ENV),
@@ -75,17 +59,6 @@ module.exports = (opts) => {
           exclude: /node_modules/,
           loaders: ['babel-loader'],
         },
-        {% if cookiecutter.use_ejs == 'y' -%}
-        {
-          test: /\.ejs$/,
-          loader: 'ejs-loader',
-          query: {
-            includePaths: [
-              path.resolve(PROJECT_ROOT, '{{ cookiecutter.static_root }}/templates/'),
-            ],
-          },
-        },
-        {% endif -%}
         {% if cookiecutter.css_extension == 'less' -%}
         {test: /\.less$/, loader: 'style-loader!css-loader!less-loader'},
         {% endif -%}

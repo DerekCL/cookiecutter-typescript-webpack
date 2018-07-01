@@ -1,3 +1,6 @@
+### [2018-07-01]
+* Removed ejs support
+
 ### [Sat Jun 18 2016]
 * Refactor configs
 * Remove phantomjs from karma

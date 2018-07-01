@@ -26,7 +26,6 @@ def context():
         "version": "0.1.0",
         "existing_project": "n",
         "css_extension": "none",
-        "use_ejs": "n"
     }
 
 
@@ -72,36 +71,6 @@ def test_default_configuration(cookies, context):
     assert result.exit_code == 0
     assert result.exception is None
     assert result.project.basename == context['repo_name']
-    assert result.project.isdir()
-
-    paths = build_files_list(str(result.project))
-    assert paths
-    check_paths(paths)
-    check_lint(result)
-
-
-@pytest.fixture(params=['existing_project', 'use_ejs'])
-def existing_project_context(request, context):
-    static_root = '{}/static/{}'.format(context['repo_name'], context['repo_name'])
-    context.update({request.param: 'y'})
-    context.update({
-        "static_root": static_root,
-        "local_output_path": '{}/bundles/'.format(static_root),
-        "production_output_path": '{}/dist/'.format(static_root)
-    })
-    return context
-
-def test_existing_project_features(cookies, existing_project_context):
-    result = cookies.bake(extra_context=existing_project_context)
-    assert result.exit_code == 0
-    assert result.exception is None
-    assert result.project.basename == existing_project_context['repo_name']
-    assert result.project.join(
-        existing_project_context['repo_name'],
-        'static',
-        existing_project_context['repo_name']
-    ).isdir()
-
     assert result.project.isdir()
 
     paths = build_files_list(str(result.project))
