@@ -68,7 +68,6 @@ Options
 * `version`: Project version number
 * `existing_project`: `n` if this is a new project and `y` if you're integrating into an existing project. See the notes below about integrating into an existing project.
 * `css_extension`: [`none`, `less`, `sass`] - use `less` or `sass` to preprocess styles.
-* `use_ejs`: `y` if you want to include `ejs` templates and loaders in the project. Recommended if not using an existing project.
 
 
 Integrating into existing projects
@@ -96,7 +95,6 @@ from cookiecutter.main import cookiecutter
           'version': '{{ cookiecutter.version }}',
           'existing_project': 'y',
           'css_extension': 'sass',
-          'use_ejs': 'n'
       })
 ```
 

@@ -99,11 +99,6 @@ There are two setting configurations: _Local_ and _Production_. Both of these se
 * Minimize code
 * Production plugins
 
-{% if cookiecutter.use_ejs -%}
-### Templates
-[Template options](https://github.com/jaketrent/html-webpack-template/blob/faac42d0720d52b444e65aa9a151e0ad8504effc/README.md#basic-usage)
-{% endif -%}
-
 
 -----------------------------------
 
