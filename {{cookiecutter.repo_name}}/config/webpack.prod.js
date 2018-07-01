@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 
-import baseConfig from './webpack.base.config.js';
+import baseConfig from './webpack.common.js';
 
 
 module.exports = (opts) => {
