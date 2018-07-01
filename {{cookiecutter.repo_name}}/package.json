@@ -85,5 +85,21 @@
     "sinon": "^6.0.1",
     "sinon-chai": "^3.2.0",
     "tslint": "^5.10.0"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx",
+      ".js",
+      ".jsx"
+    ],
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
   }
 }
