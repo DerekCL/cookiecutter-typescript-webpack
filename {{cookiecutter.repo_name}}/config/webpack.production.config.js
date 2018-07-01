@@ -1,8 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-{% if cookiecutter.existing_project == 'y' -%}
-import BundleTracker from 'webpack-bundle-tracker';
-{% endif -%}
 
 import baseConfig from './webpack.base.config.js';
 
@@ -23,10 +20,6 @@ module.exports = (opts) => {
     },
     plugins: [
       ...config.plugins,
-      {% if cookiecutter.existing_project == 'y' -%}
-      // production bundle stats file
-      new BundleTracker({filename: './webpack-stats-production.json'}),
-      {% endif -%}
       // pass options to uglify
       new webpack.LoaderOptionsPlugin({
         minimize: true,

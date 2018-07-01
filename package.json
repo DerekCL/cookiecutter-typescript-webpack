@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goldhand/cookiecutter-webpack.git"
+    "url": "git+https://github.com/DerekCL/cookiecutter-typescript-webpack.git"
   },
   "keywords": [
     "webpack",
@@ -32,10 +32,10 @@
     "cookiecutter",
     "boilerplate"
   ],
-  "author": "Will Farley <a.will.farley@gmail.com>",
+  "author": "Derek Lewandowski <derekclewandowski@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goldhand/cookiecutter-webpack/issues"
+    "url": "https://github.com/DerekCL/cookiecutter-typescript-webpack/issues"
   },
-  "homepage": "https://github.com/goldhand/cookiecutter-webpack#readme"
+  "homepage": "https://github.com/DerekCL/cookiecutter-typescript-webpack#readme"
 }

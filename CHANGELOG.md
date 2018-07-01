@@ -1,5 +1,6 @@
 ### [2018-07-01]
 * Removed ejs support
+* Removed existing project support
 
 ### [Sat Jun 18 2016]
 * Refactor configs
