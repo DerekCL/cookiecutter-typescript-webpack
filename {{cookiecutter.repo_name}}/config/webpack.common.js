@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.tsx'),
   output: {
-    filename: 'dist/program-web.js',
+    filename: 'dist/index.js',
   },
   module: {
     rules: [
