@@ -5,9 +5,8 @@
     "node": true
   },
 
-  "parser": "babel-eslint",
+  "parser": "typescript-eslint-parser",
   "plugins": [
-    "babel",
     "react"
   ],
 
@@ -57,9 +56,6 @@
     }],
 
     "jsx-quotes": [2, "prefer-double"],
-
-    "babel/object-shorthand": 0,
-    "babel/generator-star-spacing": [2, {"before": true, "after": false}],
 
     "react/jsx-boolean-value": [2, "never"],
     "react/jsx-no-undef": 2,
