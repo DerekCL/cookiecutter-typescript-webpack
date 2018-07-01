@@ -9,8 +9,8 @@ const { Component, PropTypes } = React;
 
 class CounterApp extends Component {
     static propTypes = {
-        value: PropTypes.number.isRequired,
         actions: PropTypes.object.isRequired,
+        value: PropTypes.number.isRequired,
     };
 
     render() {
