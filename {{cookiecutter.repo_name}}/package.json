@@ -8,12 +8,18 @@
   "main": "{{ cookiecutter.static_root }}/index.js",
   "scripts": {
     "babel": "./node_modules/.bin/babel-node --presets es2015",
-    "test": "NODE_ENV=test npm run babel -- ./node_modules/karma/bin/karma start",
-    "watch:test": "npm test -- --auto-watch --no-single-run",
     "webpack": "npm run babel -- ./node_modules/.bin/webpack --progress",
-    "build": "NODE_ENV=production npm run webpack",
-    "dev": "NODE_ENV=local npm run babel -- ./node_modules/.bin/webpack-dev-server --progress --hot",
-    "start": "npm run dev"
+    "build-css": "sass -s compressed sass/index.scss dist/index.css",
+    "build-js": "NODE_ENV=production npm run webpack",
+    "build": "npm run build-js && npm run build-css",
+    "develop-css": "sass sass/index.scss dist/index.css",
+    "develop-js": "NODE_ENV=local npm run babel -- ./node_modules/.bin/webpack-dev-server --progress --hot",
+    "develop": "npm run develop-js && npm run develop-css",
+    "start-dev": "npm run develop",
+    "start-prod": "npm run build",
+    "start": "npm run start-dev",
+    "test": "NODE_ENV=test npm run babel -- ./node_modules/karma/bin/karma start",
+    "watch:test": "npm test -- --auto-watch --no-single-run"
   },
   "author": "{{ cookiecutter.author_name }}",
   "license": "{{ cookiecutter.open_source_license }}",
