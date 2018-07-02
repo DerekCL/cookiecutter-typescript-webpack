@@ -11,13 +11,6 @@
  * @returns {object} - returns a webpack config object
  */
 
-
-const OPTIONS = {
-  PROJECT_ROOT: __dirname,
-  NODE_ENV: process.env.NODE_ENV,
-  CDN_PATH: process.env.CDN_PATH,
-};
-
 module.exports = (() => {
   switch (process.env.NODE_ENV) {
     case 'production':
@@ -27,4 +20,4 @@ module.exports = (() => {
     default:
       return require('./config/webpack.dev');
   }
-})()(OPTIONS);
+});
