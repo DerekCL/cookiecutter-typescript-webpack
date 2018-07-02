@@ -19,6 +19,7 @@ def get_version(*file_paths):
         return version_match.group(1)
     raise RuntimeError('Unable to find version string.')
 
+
 version = get_version('./', 'package.json')
 
 if sys.argv[-1] == 'publish':
@@ -40,11 +41,12 @@ with open('CHANGELOG.md') as changelog:
 setup(
     name='cookiecutter-webpack',
     version=version,
-    description='Boilerplate for setting up webpack 2 configuration with hot reloading, awesome-typescript-loader for es6 modules, react + redux.',
+    description=
+    'Boilerplate for setting up webpack 2 configuration with hot reloading, awesome-typescript-loader for es6 modules, react + redux.',
     long_description=readme + '\n\n' + changelog,
-    author='Will Farley',
-    author_email='a.will.farley@gmail.com',
-    url='https://github.com/goldhand/cookiecutter-webpack',
+    author='Derek Lewandowski',
+    author_email='derekclewandowski@gmail.com',
+    url='https://github.com/DerekCL/cookiecutter-typescript-webpack',
     packages=[],
     license='BSD',
     zip_safe=False,
@@ -64,8 +66,6 @@ setup(
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Software Development',
     ],
-    keywords=(
-        'cookiecutter, Python, projects, project templates, django, '
-        'skeleton, scaffolding, project directory, setup.py'
-    ),
+    keywords=('cookiecutter, Python, projects, project templates, '
+              'skeleton, scaffolding, project directory, setup.py'),
 )
