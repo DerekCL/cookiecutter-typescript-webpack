@@ -2,8 +2,8 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
+import Counter from "@src/components/Counter/Counter";
 import * as CounterActions from "@src/ducks/app/actions";
-import Counter from "@src/components/Counter";
 
 const { Component, PropTypes } = React;
 
