@@ -1,50 +1,51 @@
 import rootReducer from "reducers";
-import { applyMiddleware, compose, createStore } from "redux";
+import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import { persistState } from "redux-devtools";
+import { combineEpics, createEpicMiddleware } from "redux-observable";
 
-export default function configureStore(initialState) {
-    let enhancer;
-    // add project middleware here
-    let middlewares = [];
-    let middleware = applyMiddleware();
+import app, {
+    Action as AppAction,
+    epic as appEpic,
+    initialState as appInitialState,
+    State as AppState,
+} from "@src/ducks/app";
 
-    if (process.env.NODE_ENV !== "production") {
-        middlewares = [
-            ...middlewares,
-            require("redux-immutable-state-invariant")(),
-        ];
-        middleware = applyMiddleware(...middlewares);
+/** The root state of the app. */
+export interface State {
+    app: AppState;
+}
 
-        const getDebugSessionKey = function() {
-            // By default we try to read the key from ?debug_session=<key> in the address bar
-            const matches = window.location.href.match(
-                /[?&]debug_session=([^&]+)\b/,
-            );
-            return matches && matches.length ? matches[1] : null;
-        };
+/** The root type of actions. */
+export type Action = AppAction;
 
-        enhancer = compose(
-            // Middleware we want to use in development
-            middleware,
-            window.devToolsExtension
-                ? window.devToolsExtension()
-                : require("../containers/DevTools").default.instrument(),
+/** The top level epic. */
+const epic = combineEpics(appEpic);
 
-            // Optional. Lets you write ?debug_session=<key> in address bar to persist debug sessions
-            persistState(getDebugSessionKey()),
-        );
-    } else {
-        enhancer = compose(middleware);
-    }
+/** The top level reducer. */
+const reducer = combineReducers<State | undefined>({
+    app,
+});
 
-    const store = createStore(rootReducer, initialState, enhancer);
+export const initialState = {
+    app: appInitialState,
+};
 
-    // Enable Webpack hot module replacement for reducers
-    if (module.hot) {
-        module.hot.accept("../reducers", () =>
-            store.replaceReducer(require("../reducers").default),
-        );
-    }
+let composeEnhancers: typeof compose;
+if (process.env.NODE_ENV !== "production") {
+    composeEnhancers =
+        (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+} else {
+    composeEnhancers = compose;
+}
 
-    return store;
+/**
+ * Create a Redux store for the `program-web` application.
+ * @param state the initial state; if undefined, default state is used
+ */
+export default function configureStore(state?: State) {
+    return createStore(
+        reducer,
+        state,
+        composeEnhancers(applyMiddleware(createEpicMiddleware(epic))),
+    );
 }
