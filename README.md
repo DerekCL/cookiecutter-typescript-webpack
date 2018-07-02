@@ -2,15 +2,16 @@ Cookiecutter-webpack
 ====================
 [![CircleCI](https://circleci.com/gh/goldhand/cookiecutter-webpack.svg?style=svg)](https://circleci.com/gh/goldhand/cookiecutter-webpack)
 
-Boilerplate for setting up [webpack 2][webpack2] configuration with [babel][babel] for es6 modules, [react][react] + [redux][redux] for views and state, and [karma][karma] + [mocha][mocha] + [expect][expect] for testing.
+Boilerplate for setting up [webpack 4][webpack4] configuration with [awesome-typescript-loader][awesome-typescript-loader] for es6 modules, [react][react] + [redux][redux] for views and state, [Istanbul][Istanbul] for code coverage and [mocha][mocha] + [enzyme][enzyme] for testing.
 
-[webpack2]: https://github.com/webpack/webpack/tree/v2.1.0-beta.13
-[babel]: https://babeljs.io/
+[webpack4]: https://github.com/webpack/webpack/tree/v4.14.0
+[awesome-typescript-loader]: https://github.com/s-panferov/awesome-typescript-loader/tree/v5.2.0
 [react]: https://facebook.github.io/react/
 [redux]: http://redux.js.org/index.html
-[karma]: https://github.com/karma-runner/karma
+[Istanbul]: https://istanbul.js.org/
 [mocha]: https://github.com/mochajs/mocha
-[expect]: https://github.com/mjackson/expect
+[chai]: https://github.com/chaijs/chai/tree/4.1.2
+[enzyme]: https://github.com/airbnb/enzyme/tree/v2.9.1
 
 Getting Started
 ---------------
@@ -49,7 +50,7 @@ You should also create a new git repo and push it to github
 $ git init
 $ git add .
 $ git commit -m "Init"
-$ git remote add origin git@github.com:goldhand/project_name.git
+$ git remote add origin git@github.com:DerekCL/project_name.git
 $ git push -u origin master
 ```
 
@@ -75,7 +76,7 @@ Accepting pull requests!
 
 Clone the project:
 ```sh
-$ git clone git@github.com:goldhand/cookiecutter-webpack.git
+$ git clone git@github.com:DerekCL/cookiecutter-typescript-webpack.git
 ```
 Install python and npm dependencies:
 ```sh
