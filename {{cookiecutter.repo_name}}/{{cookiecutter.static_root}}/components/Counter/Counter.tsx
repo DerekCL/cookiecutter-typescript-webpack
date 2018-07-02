@@ -4,9 +4,9 @@ const { PropTypes, Component } = React;
 
 export default class Counter extends Component {
     static propTypes = {
-        value: PropTypes.number.isRequired,
-        incrementCounter: PropTypes.func.isRequired,
         decrementCounter: PropTypes.func.isRequired,
+        incrementCounter: PropTypes.func.isRequired,
+        value: PropTypes.number.isRequired,
     };
 
     render() {
