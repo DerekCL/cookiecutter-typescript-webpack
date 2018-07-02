@@ -1,20 +1,16 @@
 {
   "name": "cookiecutter-webpack",
-  "version": "0.3.2",
-  "description": "Boilerplate for setting up webpack 2 configuration with hot reloading, babel for es6 modules, react + redux.",
+  "version": "0.4.0",
+  "description": "Boilerplate for setting up webpack 2 configuration with hot reloading, awesome-typescript-loader for es6 modules, react + redux.",
   "directories": {
     "hooks": "hooks",
     "source": "{{cookiecutter.repo_name}}",
     "test": "tests"
   },
   "devDependencies": {
-    "babel-eslint": "^6.0.4",
-    "eslint": "^3.0.1",
-    "eslint-plugin-babel": "^3.2.0",
-    "eslint-plugin-react": "^5.0.1"
-  },
-  "engines" : {
-    "node" : ">=4"
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2",
+    "typescript-eslint-parser": "^16.0.1"
   },
   "scripts": {
     "test": "py.test tests",
@@ -29,6 +25,10 @@
     "es6",
     "react",
     "redux",
+    "typescript",
+    "mocha",
+    "chai",
+    "enzyme",
     "cookiecutter",
     "boilerplate"
   ],

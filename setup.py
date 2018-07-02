@@ -40,7 +40,7 @@ with open('CHANGELOG.md') as changelog:
 setup(
     name='cookiecutter-webpack',
     version=version,
-    description='Boilerplate for setting up webpack 2 configuration with hot reloading, babel for es6 modules, react + redux.',
+    description='Boilerplate for setting up webpack 2 configuration with hot reloading, awesome-typescript-loader for es6 modules, react + redux.',
     long_description=readme + '\n\n' + changelog,
     author='Will Farley',
     author_email='a.will.farley@gmail.com',

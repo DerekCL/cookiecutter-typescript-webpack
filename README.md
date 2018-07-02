@@ -2,10 +2,9 @@ Cookiecutter-webpack
 ====================
 [![CircleCI](https://circleci.com/gh/goldhand/cookiecutter-webpack.svg?style=svg)](https://circleci.com/gh/goldhand/cookiecutter-webpack)
 
-Boilerplate for setting up [webpack 2][webpack2] configuration with [hot reloading][hmr], [babel][babel] for es6 modules, [react][react] + [redux][redux] for views and state, and [karma][karma] + [mocha][mocha] + [expect][expect] for testing.
+Boilerplate for setting up [webpack 2][webpack2] configuration with [babel][babel] for es6 modules, [react][react] + [redux][redux] for views and state, and [karma][karma] + [mocha][mocha] + [expect][expect] for testing.
 
 [webpack2]: https://github.com/webpack/webpack/tree/v2.1.0-beta.13
-[hmr]: https://github.com/gaearon/react-transform-hmr
 [babel]: https://babeljs.io/
 [react]: https://facebook.github.io/react/
 [redux]: http://redux.js.org/index.html
@@ -22,7 +21,7 @@ Download `cookiecutter` to a global python path
 
 In your project directory run
 
-    $ cookiecutter https://github.com/goldhand/cookiecutter-webpack.git
+    $ cookiecutter https://github.com/DerekCL/cookiecutter-typescript-webpack.git
 
 Answer the prompts then `cd` into your newly created project directory.
 
@@ -66,7 +65,7 @@ Options
 * `author_name`: Your Name
 * `description`: A short description of the project for the `README.md` file
 * `version`: Project version number
-* `css_extension`: [`none`, `less`, `sass`] - use `less` or `sass` to preprocess styles.
+* `css_extension`: [`sass`, `less`, `none` ] - use `less` or `sass` to preprocess styles.
 
 
 Contributing
