@@ -11,13 +11,13 @@
  * @returns {object} - returns a webpack config object
  */
 
-module.exports = (() => {
-  switch (process.env.NODE_ENV) {
-    case 'production':
-      return require('./config/webpack.prod');
-    case 'local':
-      return require('./config/webpack.dev');
-    default:
-      return require('./config/webpack.dev');
-  }
-});
+module.exports = () => {
+    switch (process.env.NODE_ENV) {
+        case "production":
+            return require("./config/webpack.prod");
+        case "local":
+            return require("./config/webpack.dev");
+        default:
+            return require("./config/webpack.dev");
+    }
+};
