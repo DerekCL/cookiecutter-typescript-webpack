@@ -53,8 +53,8 @@ export default function configureStore(state?: State) {
             applyMiddleware(
                 logger, // For console redux state
                 routerMiddleware(history), // for dispatching history actions
+                // createEpicMiddleware(epic), // create an instance of the actual redux-observable middleware
             ),
         ),
-        // composeEnhancers(applyMiddleware(createEpicMiddleware(epic))),
     );
 }
