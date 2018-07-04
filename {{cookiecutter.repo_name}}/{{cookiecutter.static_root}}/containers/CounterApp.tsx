@@ -1,14 +1,12 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { bindActionCreators } from "redux";
 
 import Counter from "@src/components/Counter";
 import { decrementCounter, incrementCounter } from "@src/ducks/app/actions";
 import { Action, State } from "@src/store/configureStore";
 
 function mapStateToProps(state: State) {
-
     return {
         count: state.app.count,
     };
