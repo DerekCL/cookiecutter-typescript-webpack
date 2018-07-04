@@ -1,6 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "react-router";
 
 import Counter from "@src/components/Counter";
 import { decrementCounter, incrementCounter } from "@src/ducks/app/actions";

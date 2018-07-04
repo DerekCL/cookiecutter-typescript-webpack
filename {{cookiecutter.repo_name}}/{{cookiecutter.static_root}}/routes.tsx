@@ -1,10 +1,18 @@
+import { ConnectedRouter } from "connected-react-router";
+import { createBrowserHistory } from "history";
 import * as React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route, Switch } from "react-router"; // react-router v4
 
 import CounterApp from "./containers/CounterApp";
 
+const history = createBrowserHistory();
+
 export default (
-    <BrowserRouter>
-        <Route exact path="/" component={CounterApp} />
-    </BrowserRouter>
+    <ConnectedRouter history={history}>
+        <div>
+            <Switch>
+                <Route exact path="/" component={CounterApp} />
+            </Switch>
+        </div>
+    </ConnectedRouter>
 );
