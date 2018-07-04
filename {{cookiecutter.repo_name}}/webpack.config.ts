@@ -11,20 +11,13 @@
  * @returns {object} - returns a webpack config object
  */
 
-
-const OPTIONS = {
-  PROJECT_ROOT: __dirname,
-  NODE_ENV: process.env.NODE_ENV,
-  CDN_PATH: process.env.CDN_PATH,
+module.exports = () => {
+    switch (process.env.NODE_ENV) {
+        case "production":
+            return require("./webpack.prod");
+        case "local":
+            return require("./webpack.dev");
+        default:
+            return require("./webpack.dev");
+    }
 };
-
-module.exports = (() => {
-  switch (process.env.NODE_ENV) {
-    case 'production':
-      return require('./config/webpack.prod');
-    case 'local':
-      return require('./config/webpack.dev');
-    default:
-      return require('./config/webpack.dev');
-  }
-})()(OPTIONS);

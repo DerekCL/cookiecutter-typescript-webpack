@@ -1,12 +1,10 @@
 import * as React from "react";
 
-const { PropTypes, Component } = React;
+interface Props {
+    children?: any;
+}
 
-export default class App extends Component {
-    static propTypes = {
-        children: PropTypes.element.isRequired,
-    };
-
+export default class App extends React.Component<Props> {
     render() {
         return <main>{this.props.children}</main>;
     }

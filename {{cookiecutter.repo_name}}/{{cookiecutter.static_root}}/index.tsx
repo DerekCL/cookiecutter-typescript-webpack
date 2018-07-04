@@ -1,37 +1,17 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { browserHistory, Router } from "react-router";
 
 import routes from "./routes";
 import configureStore from "./store/configureStore";
 
-const STORE = configureStore(),
-    ROOT_ELEMENT = "main";
-
-let ProjectElement;
-
-if (process.env.NODE_ENV !== "production") {
-    // development
-    const DevTools = window.devToolsExtension
-        ? () => null
-        : require("./containers/DevTools").default;
-
-    ProjectElement = (
-        <div>
-            <Router history={browserHistory} routes={routes} />
-            <DevTools />
-        </div>
-    );
-} else {
-    // production
-    ProjectElement = <Router history={browserHistory} routes={routes} />;
-}
+const STORE = configureStore();
+const ROOT_ELEMENT = "root";
 
 // handle client side rendering
 if (typeof document !== "undefined") {
     ReactDOM.render(
-        <Provider store={STORE}>{ProjectElement}</Provider>,
+        <Provider store={STORE}>{routes}</Provider>,
         document.getElementById(ROOT_ELEMENT),
     );
 }

@@ -1,20 +1,19 @@
-import React from "react";
+import * as React from "react";
+import { pure } from "recompose";
 
-const { PropTypes, Component } = React;
+interface Props {
+    decrementCounter: () => void;
+    incrementCounter: () => void;
+    count: number;
+}
 
-export default class Counter extends Component {
-    static propTypes = {
-        decrementCounter: PropTypes.func.isRequired,
-        incrementCounter: PropTypes.func.isRequired,
-        value: PropTypes.number.isRequired,
-    };
-
+class Counter extends React.Component<Props> {
     render() {
-        const { value, incrementCounter, decrementCounter } = this.props;
+        const { count, incrementCounter, decrementCounter } = this.props;
 
         return (
             <div className="counter">
-                <h1>Counter: {value}</h1>
+                <h1>Counter: {count}</h1>
                 <button onClick={incrementCounter}>+</button>
                 <button onClick={decrementCounter}>-</button>
                 <hr />
@@ -22,3 +21,5 @@ export default class Counter extends Component {
         );
     }
 }
+
+export default pure(Counter);

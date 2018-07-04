@@ -1,15 +1,13 @@
+import { FSA } from "@src/helpers/FSA";
+
 /** Action type constants. */
 export const INCREMENT = "INCREMENT";
 export const DECREMENT = "DECREMENT";
 
 /** Action type definitions. */
-export interface IncrementAction {
-    type: typeof INCREMENT;
-}
+export type IncrementAction = FSA<typeof INCREMENT>;
 
-export interface DecrementAction {
-    type: typeof DECREMENT;
-}
+export type DecrementAction = FSA<typeof DECREMENT>;
 
 export type Action = IncrementAction | DecrementAction;
 

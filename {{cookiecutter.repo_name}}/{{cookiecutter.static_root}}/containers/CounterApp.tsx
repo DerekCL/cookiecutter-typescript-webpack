@@ -1,38 +1,28 @@
 import * as React from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { bindActionCreators } from "redux";
 
 import Counter from "@src/components/Counter/Counter";
-import * as CounterActions from "@src/ducks/app/actions";
+import { decrementCounter, incrementCounter } from "@src/ducks/app/actions";
+import { Action, State } from "@src/store/configureStore";
 
-const { Component, PropTypes } = React;
+function mapStateToProps(state: State) {
+    console.log(state.app.count);
 
-class CounterApp extends Component {
-    static propTypes = {
-        actions: PropTypes.object.isRequired,
-        value: PropTypes.number.isRequired,
-    };
-
-    render() {
-        return (
-            <div>
-                <Counter value={this.props.value} {...this.props.actions} />
-            </div>
-        );
-    }
-}
-function mapStateToProps(state) {
     return {
-        value: state.counter,
+        count: state.app.count,
     };
 }
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch: (action: Action) => void) {
+    console.log("decrementCounter()");
     return {
-        actions: bindActionCreators(CounterActions, dispatch),
+        decrementCounter: () => dispatch(decrementCounter()),
+        incrementCounter: () => dispatch(incrementCounter()),
     };
 }
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps,
-)(CounterApp);
+)(Counter) as React.ComponentType<any>);
