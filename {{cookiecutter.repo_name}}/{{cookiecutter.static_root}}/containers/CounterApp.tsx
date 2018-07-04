@@ -8,14 +8,12 @@ import { decrementCounter, incrementCounter } from "@src/ducks/app/actions";
 import { Action, State } from "@src/store/configureStore";
 
 function mapStateToProps(state: State) {
-    console.log(state.app.count);
 
     return {
         count: state.app.count,
     };
 }
 function mapDispatchToProps(dispatch: (action: Action) => void) {
-    console.log("decrementCounter()");
     return {
         decrementCounter: () => dispatch(decrementCounter()),
         incrementCounter: () => dispatch(incrementCounter()),
