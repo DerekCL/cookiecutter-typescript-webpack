@@ -14,10 +14,10 @@
     "start:dev": "npm-run-all build:dev:*",
     "start:prod": "npm-run-all build:prod*",
     "start:watch": "npm-run-all watch:*",
-    "start": "npm run start:dev",
+    "start": "npm run start:watch",
     "test": "nyc mocha",
     "watch:css": "sass sass/index.scss dist/index.css",
-    "watch:js": "npm run webpack-dev-server --config webpack.dev.js --progress --hot",
+    "watch:js": "webpack-dev-server --config webpack.dev.js --progress --hot",
     "watch": "npm-run-all watch:*"
   },
   "author": "{{ cookiecutter.author_name }}",
