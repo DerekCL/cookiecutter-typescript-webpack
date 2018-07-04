@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { bindActionCreators } from "redux";
 
-import Counter from "@src/components/Counter/Counter";
+import Counter from "@src/components/Counter";
 import { decrementCounter, incrementCounter } from "@src/ducks/app/actions";
 import { Action, State } from "@src/store/configureStore";
 
