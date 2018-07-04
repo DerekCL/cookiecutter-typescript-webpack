@@ -14,10 +14,10 @@
 module.exports = () => {
     switch (process.env.NODE_ENV) {
         case "production":
-            return require(".webpack.prod");
+            return require("./webpack.prod");
         case "local":
-            return require(".webpack.dev");
+            return require("./webpack.dev");
         default:
-            return require(".webpack.dev");
+            return require("./webpack.dev");
     }
 };

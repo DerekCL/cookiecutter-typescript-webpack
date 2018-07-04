@@ -4,7 +4,7 @@ const path = require("path");
 // erase `resolve.alias`.
 
 module.exports = {
-    entry: path.resolve(__dirname, "../src/index.tsx"),
+    entry: path.resolve(__dirname, "src/index.tsx"),
     output: {
         filename: "dist/index.js",
     },

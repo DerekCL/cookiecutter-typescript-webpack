@@ -1,3 +1,3 @@
-export default interface epic {
-    number;
-}
+// export default interface epic {
+//     number;
+// }
