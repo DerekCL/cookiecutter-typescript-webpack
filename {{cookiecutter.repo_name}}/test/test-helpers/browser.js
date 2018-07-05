@@ -1,6 +1,6 @@
 var chai = require('chai');
 var enzyme = require('enzyme');
-var Adapter = require('enzyme-adapter-react-15');
+var Adapter = require('enzyme-adapter-react-16');
 var chaiEnzyme = require('chai-enzyme');
 var sinonChai = require('sinon-chai');
 var { jsdom } = require('jsdom');
