@@ -2,6 +2,8 @@ Cookiecutter-webpack
 ====================
 [![CircleCI](https://circleci.com/gh/goldhand/cookiecutter-webpack.svg?style=svg)](https://circleci.com/gh/goldhand/cookiecutter-webpack)
 
+[![Cookiecutter-webpack](https://img.shields.io/badge/built%20with-Cookiecutter%20Webpack-f38230.svg)][cookiecutter-webpack]
+
 Boilerplate for setting up [webpack 4][webpack4] configuration with [awesome-typescript-loader][awesome-typescript-loader] for es6 modules, [react][react] + [redux][redux] for views and state, [Istanbul][Istanbul] for code coverage and [mocha][mocha] + [chai][chai] + [enzyme][enzyme] for testing.
 
 [webpack4]: https://github.com/webpack/webpack/tree/v4.14.0
@@ -12,6 +14,7 @@ Boilerplate for setting up [webpack 4][webpack4] configuration with [awesome-typ
 [mocha]: https://github.com/mochajs/mocha
 [chai]: https://github.com/chaijs/chai/tree/4.1.2
 [enzyme]: https://github.com/airbnb/enzyme/tree/v2.9.1
+[cookiecutter-webpack]: https://github.com/goldhand/cookiecutter-webpack
 
 Getting Started
 ---------------
