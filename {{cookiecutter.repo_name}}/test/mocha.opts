@@ -3,4 +3,4 @@
 --require source-map-support/register
 --require test/test-helpers/browser.js
 --recursive
-test/**/*.?(j|t)s?(x)
+test/**/*.ts?(x)
