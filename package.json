@@ -1,6 +1,6 @@
 {
   "name": "cookiecutter-webpack",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Boilerplate for setting up webpack 2 configuration with hot reloading, awesome-typescript-loader for es6 modules, react + redux.",
   "directories": {
     "hooks": "hooks",
