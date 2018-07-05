@@ -1,0 +1,6 @@
+--require tsconfig-paths/register
+--require ts-node/register
+--require source-map-support/register
+--require test/test-helpers/browser.js
+--recursive
+test/**/*.ts?(x)

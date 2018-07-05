@@ -1,0 +1,7 @@
+{
+  "extends": "../tslint.json",
+  "rules": {
+    "array-type": [true, "array"],
+    "no-unused-expression": false
+  }
+}

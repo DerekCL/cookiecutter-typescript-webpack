@@ -1,3 +1,13 @@
+### [2018-07-04]
+* Added typescript support
+* Added new linting for typescript
+* Upgraded dependencies
+* Updated readmes
+* Update gitignore files
+* Changed structure for redux to a Duck modularization
+* Fixed Less, Sass, and Css modularization
+* Removed large portions of the older codebase
+
 ### [2018-07-01]
 * Removed ejs support
 * Removed existing project support
