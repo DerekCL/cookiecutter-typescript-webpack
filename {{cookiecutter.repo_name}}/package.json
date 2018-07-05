@@ -12,7 +12,7 @@
     "build:prod:css": "sass -s compressed sass/index.scss dist/index.css",
     "build:prod:js": "webpack --config webpack.dev.js --progress",
     "start:dev": "npm-run-all build:dev:*",
-    "start:prod": "npm-run-all build:prod*",
+    "start:prod": "npm-run-all build:prod:*",
     "start:watch": "npm-run-all watch:*",
     "start": "npm run start:watch",
     "test": "nyc mocha",
