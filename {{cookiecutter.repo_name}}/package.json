@@ -8,9 +8,9 @@
   "main": "{{ cookiecutter.static_root }}/index.js",
   "scripts": {
     "build:dev:css": "sass sass/index.scss dist/index.css",
-    "build:dev:js": "webpack --config webpack.prod.js --progress",
+    "build:dev:js": "webpack --config webpack.dev.js --progress",
     "build:prod:css": "sass -s compressed sass/index.scss dist/index.css",
-    "build:prod:js": "webpack --config webpack.dev.js --progress",
+    "build:prod:js": "webpack --config webpack.prod.js --progress",
     "start:dev": "npm-run-all build:dev:*",
     "start:prod": "npm-run-all build:prod:*",
     "start:watch": "npm-run-all watch:*",
