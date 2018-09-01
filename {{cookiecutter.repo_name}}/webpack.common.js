@@ -4,6 +4,13 @@ const path = require("path");
 // erase `resolve.alias`.
 
 module.exports = {
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        port: 3000,
+        historyApiFallback: {
+            index: 'index.html'
+        }
+    },
     entry: path.resolve(__dirname, "src/index.tsx"),
     output: {
         filename: "index.js",
