@@ -1,5 +1,3 @@
-import { connectRouter, routerMiddleware } from "connected-react-router";
-import { createBrowserHistory } from "history";
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import logger from "redux-logger";
 import { combineEpics, createEpicMiddleware } from "redux-observable";
@@ -39,20 +37,17 @@ if (process.env.NODE_ENV !== "production") {
     composeEnhancers = compose;
 }
 
-const history = createBrowserHistory();
-
 /**
  * Create a Redux store for the `program-web` application.
  * @param state the initial state; if undefined, default state is used
  */
 export default function configureStore(state?: State) {
     return createStore(
-        connectRouter(history)(reducer), // new root reducer with router state
+        reducer,
         state,
         composeEnhancers(
             applyMiddleware(
                 logger, // For console redux state
-                routerMiddleware(history), // for dispatching history actions
                 // createEpicMiddleware(epic), // create an instance of the actual redux-observable middleware
             ),
         ),

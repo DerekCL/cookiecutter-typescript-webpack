@@ -1,6 +1,5 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router";
 
 import Counter from "@src/components/Counter";
 import { decrementCounter, incrementCounter } from "@src/ducks/app/actions";
@@ -18,7 +17,7 @@ function mapDispatchToProps(dispatch: (action: Action) => void) {
     };
 }
 
-export default withRouter(connect(
+export default connect(
     mapStateToProps,
     mapDispatchToProps,
-)(Counter) as React.ComponentType<any>);
+)(Counter) as React.ComponentType<any>;
